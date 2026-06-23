@@ -89,12 +89,12 @@ export function HeroSequence() {
             </motion.div>
           </motion.div>
 
-          {/* SOLUTIONS */}
+          {/* SOLUTION */}
           <motion.h2 
             style={{ y: solutionsY }}
             className="text-2xl md:text-3xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
           >
-            SOLUTIONS
+            SOLUTION
           </motion.h2>
         </motion.div>
 
