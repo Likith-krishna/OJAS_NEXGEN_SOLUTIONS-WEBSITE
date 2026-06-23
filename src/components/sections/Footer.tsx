@@ -9,24 +9,10 @@ export function Footer() {
           
           {/* Company Overview */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold tracking-widest text-blue-500 mb-6">OJAS</h3>
+            <h3 className="text-2xl font-bold tracking-widest text-blue-500 mb-6">OJAS NEXGEN SOLUTIONS</h3>
             <p className="text-sm leading-relaxed mb-6 text-slate-400">
               Transforming Ideas into Digital Reality. We build future-ready software solutions for modern businesses globally.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                <Globe className="h-4 w-4" />
-              </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                <MessageSquare className="h-4 w-4" />
-              </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                <Mail className="h-4 w-4" />
-              </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                <Phone className="h-4 w-4" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
