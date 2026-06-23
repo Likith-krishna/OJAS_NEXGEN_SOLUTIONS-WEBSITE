@@ -15,24 +15,24 @@ export function HeroSequence() {
   });
 
   // Splitting NEXGEN into NEXT and GENERATION
-  const nexX = useTransform(scrollYProgress, [0, 0.2], [0, -200]);
-  const genX = useTransform(scrollYProgress, [0, 0.2], [0, 120]);
+  const nexX = useTransform(scrollYProgress, [0, 0.2, 1], [0, -200, -200]);
+  const genX = useTransform(scrollYProgress, [0, 0.2, 1], [0, 120, 120]);
   
   // Fade in the 'T' exactly as the gap opens
-  const tOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-  const tX = useTransform(scrollYProgress, [0, 0.2], [-50, 0]);
+  const tOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
+  const tX = useTransform(scrollYProgress, [0, 0.2, 1], [-50, 0, 0]);
 
   // Visual centering & scale
-  const titleX = useTransform(scrollYProgress, [0, 0.2], ["0%", "-12%"]);
-  const titleScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.65]);
+  const titleX = useTransform(scrollYProgress, [0, 0.2, 1], ["0%", "-12%", "-12%"]);
+  const titleScale = useTransform(scrollYProgress, [0, 0.2, 1], [1, 0.65, 0.65]);
   
   // Fade out the ENTIRE title block (OJAS, NEXT GENERATION, SOLUTIONS) together
-  const titleOpacity = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.25, 0.35, 1], [1, 1, 0, 0]);
   
   // Hero Content reveal: start AFTER a large gap (0.45)
   // Fade out cleanly at the end (0.85 to 0.95)
-  const contentOpacity = useTransform(scrollYProgress, [0.45, 0.55, 0.85, 0.95], [0, 1, 1, 0]);
-  const contentY = useTransform(scrollYProgress, [0.45, 0.55, 0.85, 0.95], [50, 0, 0, -50]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.45, 0.55, 0.85, 0.95, 1], [0, 0, 1, 1, 0, 0]);
+  const contentY = useTransform(scrollYProgress, [0, 0.45, 0.55, 0.85, 0.95, 1], [50, 50, 0, 0, -50, -50]);
 
   return (
     <div ref={containerRef} className="relative h-[400vh] w-full bg-white text-slate-900">
