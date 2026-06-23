@@ -40,6 +40,7 @@ export function HeroSequence() {
   // Shrink during split to prevent overflow, then shrink more and move up
   const titleScale = useTransform(scrollYProgress, [0.1, 0.3, 0.5], [1, 0.65, 0.45]);
   const titleY = useTransform(scrollYProgress, [0.3, 0.5], ["0vh", "-45vh"]);
+  const titleOpacity = useTransform(scrollYProgress, [0.8, 0.9], [1, 0]);
   
   // Hero Content reveal: only start after SOLUTIONS is completely gone (0.5)
   // Fade out before reaching the bottom (0.8 to 0.9) so the page disappears cleanly
@@ -60,7 +61,7 @@ export function HeroSequence() {
         {/* Hero Title */}
         <motion.div 
           className="absolute flex flex-col items-center justify-center gap-6 whitespace-nowrap w-full"
-          style={{ y: titleY }}
+          style={{ y: titleY, opacity: titleOpacity }}
         >
           {/* OJAS */}
           <motion.h2 
