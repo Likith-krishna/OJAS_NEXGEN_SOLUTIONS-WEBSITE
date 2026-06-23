@@ -54,7 +54,7 @@ export function LogisticsSection() {
               OJAS International Logistics Solutions
             </h3>
             <p className="text-lg text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
-              Headquartered in Chennai, India, OJAS International operates as a premier freight forwarder and licensed Multi-Modal Transport Operator (MTO). We provide comprehensive "on-top" supply chain solutions—from initial concept and consulting to engineering and door-to-door implementation.
+              OJAS International Logistics Solutions is a trusted global partner in supply chain management and freight forwarding. We deliver comprehensive, end-to-end transportation services designed to streamline operations, optimize routing, and ensure your cargo reaches its destination safely and on time, anywhere in the world.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16 text-left">
