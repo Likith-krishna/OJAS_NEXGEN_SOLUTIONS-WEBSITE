@@ -17,10 +17,8 @@ export function HeroSequence() {
   // 1. Initial State -> Morph (0 to 0.2)
   // Fade out completely very early BEFORE content comes up to guarantee no overlap!
   const ojasOpacity = useTransform(scrollYProgress, [0.05, 0.15], [1, 0]);
-  const ojasY = useTransform(scrollYProgress, [0, 0.2], [0, -100]); // Moves UP
   
   const solutionsOpacity = useTransform(scrollYProgress, [0.05, 0.15], [1, 0]);
-  const solutionsY = useTransform(scrollYProgress, [0, 0.2], [0, 100]); // Moves DOWN (stays under)
 
   // Splitting NEXGEN into NEXT and GENERATION
   const nexX = useTransform(scrollYProgress, [0, 0.2], [0, -200]);
@@ -64,7 +62,7 @@ export function HeroSequence() {
         >
           {/* OJAS */}
           <motion.h2 
-            style={{ opacity: ojasOpacity, y: ojasY }}
+            style={{ opacity: ojasOpacity }}
             className="text-2xl font-semibold tracking-[0.3em] text-slate-500"
           >
             OJAS
@@ -122,7 +120,7 @@ export function HeroSequence() {
 
           {/* SOLUTIONS */}
           <motion.h2 
-            style={{ opacity: solutionsOpacity, y: solutionsY }}
+            style={{ opacity: solutionsOpacity }}
             className="text-2xl font-semibold tracking-[0.3em] text-slate-500"
           >
             SOLUTIONS
