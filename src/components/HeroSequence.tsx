@@ -23,8 +23,9 @@ export function HeroSequence() {
   const solutionsY = useTransform(scrollYProgress, [0, 0.2], [0, 50]);
 
   // Splitting NEXGEN into NEXT and GENERATION
-  // We move NEX to the left, GEN to the right.
-  const nexX = useTransform(scrollYProgress, [0.1, 0.3], [0, -120]);
+  // We move NEX further to the left to account for the width of the new 'T'
+  // so the dot remains perfectly centered in the gap.
+  const nexX = useTransform(scrollYProgress, [0.1, 0.3], [0, -200]);
   const genX = useTransform(scrollYProgress, [0.1, 0.3], [0, 120]);
   
   // Fade in the 'T' exactly as the gap opens so it doesn't disappear early on scroll up
