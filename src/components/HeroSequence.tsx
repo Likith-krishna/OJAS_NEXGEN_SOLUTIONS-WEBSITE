@@ -81,11 +81,11 @@ export function HeroSequence() {
           >
             {/* "NEX" block */}
             <motion.div style={{ x: nexX, y: nexY }} className="flex relative z-10">
-              <span className="bg-gradient-to-r from-blue-950 to-blue-800 bg-clip-text text-transparent">NEX</span>
+              <span className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">NEX</span>
               {/* The 'T' fades in */}
               <motion.span 
                 style={{ opacity: tOpacity, x: tX, position: 'absolute', right: '-0.7em' }}
-                className="bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent"
               >
                 T
               </motion.span>
@@ -93,11 +93,11 @@ export function HeroSequence() {
             
             {/* "GEN" block */}
             <motion.div style={{ x: genX, y: genY }} className="flex relative z-0">
-              <span className="bg-gradient-to-r from-blue-950 to-blue-800 bg-clip-text text-transparent">GEN</span>
+              <span className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">GEN</span>
               {/* 'ERATION' fades in */}
               <motion.span 
                 style={{ opacity: erationOpacity, x: erationX, position: 'absolute', left: '100%' }}
-                className="bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent"
               >
                 ERATION
               </motion.span>
