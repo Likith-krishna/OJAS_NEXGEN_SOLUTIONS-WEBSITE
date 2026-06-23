@@ -15,10 +15,10 @@ export function HeroSequence() {
   });
 
   // 1. Initial State -> Morph (0 to 0.3)
-  const ojasOpacity = useTransform(scrollYProgress, [0, 0.4, 0.5], [1, 1, 0]);
+  const ojasOpacity = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 1, 0]);
   const ojasY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
   
-  const solutionsOpacity = useTransform(scrollYProgress, [0, 0.4, 0.5], [1, 1, 0]);
+  const solutionsOpacity = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 1, 0]);
   const solutionsY = useTransform(scrollYProgress, [0, 0.2], [0, 50]);
 
   // Splitting NEXGEN into NEXT and GENERATION
@@ -40,9 +40,9 @@ export function HeroSequence() {
   const titleScale = useTransform(scrollYProgress, [0.1, 0.3, 0.5], [1, 0.65, 0.45]);
   const titleY = useTransform(scrollYProgress, [0.3, 0.5], ["0vh", "-45vh"]);
   
-  // Hero Content reveal
-  const contentOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
-  const contentY = useTransform(scrollYProgress, [0.5, 0.6], [100, 0]);
+  // Hero Content reveal: start fading in earlier (0.3) to crossfade with SOLUTIONS
+  const contentOpacity = useTransform(scrollYProgress, [0.3, 0.6], [0, 1]);
+  const contentY = useTransform(scrollYProgress, [0.4, 0.6], [100, 0]);
 
   return (
     <div ref={containerRef} className="relative h-[300vh] w-full bg-white text-slate-900">
