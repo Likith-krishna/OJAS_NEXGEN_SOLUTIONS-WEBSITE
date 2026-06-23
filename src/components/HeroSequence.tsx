@@ -18,17 +18,17 @@ export function HeroSequence() {
   });
 
   // Move OJAS and SOLUTIONS outwards vertically so they don't collide with the diagonal split
-  const ojasY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -100, -100]);
-  const solutionsY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 100, 100]);
+  const ojasY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -80, -80]);
+  const solutionsY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 80, 80]);
 
   // Splitting NEXGEN into NEXT and GENERATION (Diagonal Split)
-  // NEXT goes further to the left to give more space
-  const nexX = useTransform(scrollYProgress, [0, 0.2, 1], [0, -180, -180]);
-  const nexY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -70, -70]);
+  // Tighter horizontal and vertical spacing for a cleaner look
+  const nexX = useTransform(scrollYProgress, [0, 0.2, 1], [0, -80, -80]);
+  const nexY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -45, -45]);
   
   // GENERATION moves right
-  const genX = useTransform(scrollYProgress, [0, 0.2, 1], [0, 100, 100]);
-  const genY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 70, 70]);
+  const genX = useTransform(scrollYProgress, [0, 0.2, 1], [0, 50, 50]);
+  const genY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 45, 45]);
   
   // Fade in the 'T' and 'ERATION'
   const tOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
@@ -84,7 +84,7 @@ export function HeroSequence() {
               <span className="text-blue-600">NEX</span>
               {/* The 'T' fades in */}
               <motion.span 
-                style={{ opacity: tOpacity, x: tX, position: 'absolute', right: '-0.7em' }}
+                style={{ opacity: tOpacity, x: tX, position: 'absolute', left: '100%' }}
                 className="text-blue-600"
               >
                 T
