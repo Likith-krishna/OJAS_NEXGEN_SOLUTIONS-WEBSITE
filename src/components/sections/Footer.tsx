@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16 border-b border-slate-800 pb-16">
           
           {/* Company Overview */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2 lg:pr-16">
             <h3 className="text-2xl font-bold tracking-widest text-blue-500 mb-6">OJAS NEXGEN SOLUTIONS</h3>
             <p className="text-sm leading-relaxed mb-6 text-slate-400">
               Transforming Ideas into Digital Reality. We build future-ready software solutions for modern businesses globally.
@@ -39,26 +39,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h4 className="text-lg font-bold text-white mb-6">Stay Updated</h4>
-            <p className="text-sm text-slate-400 mb-4">
-              Subscribe to our newsletter for the latest tech insights.
-            </p>
-            <form className="flex">
-              <input 
-                type="email" 
-                placeholder="Email address" 
-                className="w-full bg-slate-900 border border-slate-800 rounded-l-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500"
-              />
-              <button 
-                type="button" 
-                className="bg-blue-600 hover:bg-blue-500 px-4 py-3 rounded-r-xl transition-colors flex items-center justify-center"
-              >
-                <ArrowRight className="h-4 w-4 text-white" />
-              </button>
-            </form>
-          </div>
 
         </div>
 
