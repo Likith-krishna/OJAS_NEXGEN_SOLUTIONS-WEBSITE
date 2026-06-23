@@ -4,6 +4,9 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Code2 } from "lucide-react";
 import Link from "next/link";
+import { Syncopate } from "next/font/google";
+
+const syncopate = Syncopate({ subsets: ["latin"], weight: ["400", "700"] });
 
 export function HeroSequence() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -66,7 +69,7 @@ export function HeroSequence() {
           {/* OJAS */}
           <motion.h2 
             style={{ y: ojasY }}
-            className="text-xl md:text-3xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
+            className={`${syncopate.className} text-xl md:text-3xl font-bold tracking-[0.2em] text-black uppercase`}
           >
             OJAS
           </motion.h2>
@@ -104,7 +107,7 @@ export function HeroSequence() {
           {/* SOLUTION */}
           <motion.h2 
             style={{ y: solutionsY }}
-            className="text-xl md:text-3xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
+            className={`${syncopate.className} text-xl md:text-3xl font-bold tracking-[0.2em] text-black uppercase`}
           >
             SOLUTION
           </motion.h2>
