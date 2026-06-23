@@ -15,11 +15,11 @@ export function HeroSequence() {
   });
 
   // 1. Initial State -> Morph (0 to 0.3)
-  // Fade out completely by 0.4 BEFORE content comes up at 0.5 to prevent overlap!
-  const ojasOpacity = useTransform(scrollYProgress, [0, 0.3, 0.4], [1, 1, 0]);
+  // Fade out completely very early (by 0.2) BEFORE content comes up at 0.5 to guarantee no overlap!
+  const ojasOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
   const ojasY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
   
-  const solutionsOpacity = useTransform(scrollYProgress, [0, 0.3, 0.4], [1, 1, 0]);
+  const solutionsOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
   const solutionsY = useTransform(scrollYProgress, [0, 0.2], [0, 50]);
 
   // Splitting NEXGEN into NEXT and GENERATION
