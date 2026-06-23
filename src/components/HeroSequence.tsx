@@ -15,10 +15,10 @@ export function HeroSequence() {
   });
 
   // 1. Initial State -> Morph (0 to 0.3)
-  const ojasOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 1]);
+  const ojasOpacity = useTransform(scrollYProgress, [0, 0.4, 0.5], [1, 1, 0]);
   const ojasY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
   
-  const solutionsOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 1]);
+  const solutionsOpacity = useTransform(scrollYProgress, [0, 0.4, 0.5], [1, 1, 0]);
   const solutionsY = useTransform(scrollYProgress, [0, 0.2], [0, 50]);
 
   // Splitting NEXGEN into NEXT and GENERATION
@@ -42,7 +42,7 @@ export function HeroSequence() {
   
   // Hero Content reveal
   const contentOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
-  const contentY = useTransform(scrollYProgress, [0.5, 0.6], [150, 60]);
+  const contentY = useTransform(scrollYProgress, [0.5, 0.6], [100, 0]);
 
   return (
     <div ref={containerRef} className="relative h-[300vh] w-full bg-white text-slate-900">
@@ -58,7 +58,7 @@ export function HeroSequence() {
         {/* Hero Title */}
         <motion.div 
           className="absolute flex flex-col items-center justify-center gap-6 whitespace-nowrap w-full"
-          style={{ x: titleX, y: titleY }}
+          style={{ y: titleY }}
         >
           {/* OJAS */}
           <motion.h2 
@@ -70,19 +70,19 @@ export function HeroSequence() {
 
           {/* NEX(T)GEN Split */}
           <motion.div 
-            style={{ scale: titleScale }}
+            style={{ scale: titleScale, x: titleX }}
             className="relative flex items-center justify-center text-7xl font-extrabold tracking-tighter md:text-9xl"
           >
             <motion.div 
               style={{ x: nexX }}
               className="flex items-center relative"
             >
-              <span className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent drop-shadow-sm">
+              <span className="text-blue-600 drop-shadow-sm">
                 NEX
               </span>
               <motion.span 
                 style={{ opacity: tOpacity, x: tX }}
-                className="absolute left-[100%] top-0 bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent drop-shadow-sm"
+                className="absolute left-[100%] top-0 text-blue-600 drop-shadow-sm"
               >
                 T
               </motion.span>
@@ -97,7 +97,7 @@ export function HeroSequence() {
             {/* The Dot */}
             <motion.div
               style={{ opacity: tOpacity }}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-500 font-bold"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-600 font-bold"
             >
               •
             </motion.div>
@@ -106,12 +106,12 @@ export function HeroSequence() {
               style={{ x: genX }}
               className="flex items-center relative"
             >
-              <span className="bg-gradient-to-l from-blue-800 to-blue-600 bg-clip-text text-transparent drop-shadow-sm">
+              <span className="text-blue-600 drop-shadow-sm">
                 GEN
               </span>
               <motion.span 
                 style={{ opacity: tOpacity }}
-                className="absolute left-[100%] top-0 bg-gradient-to-l from-blue-600 to-blue-500 bg-clip-text text-transparent drop-shadow-sm"
+                className="absolute left-[100%] top-0 text-blue-600 drop-shadow-sm"
               >
                 ERATION
               </motion.span>
