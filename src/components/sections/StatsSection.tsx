@@ -4,9 +4,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const STATS = [
-  { value: "100%", label: "Code Ownership" },
-  { value: "Zero", label: "Vendor Lock-In" },
-  { value: "Agile", label: "Sprint Delivery" },
+  { value: "10x", label: "Faster Delivery" },
+  { value: "100%", label: "Modern Tech Stack" },
+  { value: "100%", label: "Client Satisfaction" },
   { value: "24/7", label: "Dedicated Support" }
 ];
 
