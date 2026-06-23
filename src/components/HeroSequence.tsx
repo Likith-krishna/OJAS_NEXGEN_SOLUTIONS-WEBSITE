@@ -23,8 +23,8 @@ export function HeroSequence() {
 
   // Splitting NEXGEN into NEXT and GENERATION
   // We move NEX to the left, GEN to the right.
-  const nexX = useTransform(scrollYProgress, [0.1, 0.3], [0, -150]);
-  const genX = useTransform(scrollYProgress, [0.1, 0.3], [0, 150]);
+  const nexX = useTransform(scrollYProgress, [0.1, 0.3], [0, -120]);
+  const genX = useTransform(scrollYProgress, [0.1, 0.3], [0, 120]);
   
   // Fade in the 'T' exactly as the gap opens so it doesn't disappear early on scroll up
   const tOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
@@ -33,9 +33,12 @@ export function HeroSequence() {
   // Particles opacity
   const particlesOpacity = useTransform(scrollYProgress, [0.1, 0.2, 0.3], [0, 1, 0]);
 
-  // Moves everything to top
+  // Visual centering & scale: "GENERATION" makes it right-heavy and very wide
+  const titleX = useTransform(scrollYProgress, [0.1, 0.3], ["0%", "-12%"]);
+  
+  // Shrink during split to prevent overflow, then shrink more and move up
+  const titleScale = useTransform(scrollYProgress, [0.1, 0.3, 0.5], [1, 0.65, 0.45]);
   const titleY = useTransform(scrollYProgress, [0.3, 0.5], ["0vh", "-35vh"]);
-  const titleScale = useTransform(scrollYProgress, [0.3, 0.5], [1, 0.6]);
   
   // Hero Content reveal
   const contentOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
@@ -54,8 +57,8 @@ export function HeroSequence() {
 
         {/* Hero Title */}
         <motion.div 
-          className="absolute flex flex-col items-center justify-center gap-6"
-          style={{ y: titleY, scale: titleScale }}
+          className="absolute flex flex-col items-center justify-center gap-6 whitespace-nowrap w-full"
+          style={{ x: titleX, y: titleY, scale: titleScale }}
         >
           {/* OJAS */}
           <motion.h2 
