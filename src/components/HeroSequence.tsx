@@ -54,7 +54,7 @@ export function HeroSequence() {
         >
           {/* OJAS */}
           <motion.h2 
-            className="text-lg md:text-2xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
+            className="text-2xl md:text-3xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
           >
             OJAS
           </motion.h2>
@@ -105,7 +105,7 @@ export function HeroSequence() {
 
           {/* SOLUTIONS */}
           <motion.h2 
-            className="text-lg md:text-2xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
+            className="text-2xl md:text-3xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
           >
             SOLUTIONS
           </motion.h2>
