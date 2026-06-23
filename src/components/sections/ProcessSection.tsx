@@ -14,7 +14,7 @@ const PROCESS_STEPS = [
 
 export function ProcessSection() {
   return (
-    <section className="w-full bg-white py-32 px-6">
+    <section id="process" className="w-full bg-white py-32 px-6">
       <div className="mx-auto max-w-5xl">
         <div className="text-center mb-24">
           <h2 className="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Development Process</h2>

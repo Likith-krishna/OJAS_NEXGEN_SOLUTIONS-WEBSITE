@@ -14,7 +14,7 @@ const PORTFOLIO = [
 
 export function PortfolioSection() {
   return (
-    <section className="w-full bg-slate-50 py-32 px-6">
+    <section id="portfolio" className="w-full bg-slate-50 py-32 px-6">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
