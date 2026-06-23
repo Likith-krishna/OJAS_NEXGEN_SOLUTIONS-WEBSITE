@@ -14,12 +14,6 @@ export function HeroSequence() {
     offset: ["start start", "end end"]
   });
 
-  // 1. Initial State -> Morph (0 to 0.2)
-  // Fade out completely very early BEFORE content comes up to guarantee no overlap!
-  const ojasOpacity = useTransform(scrollYProgress, [0.05, 0.15], [1, 0]);
-  
-  const solutionsOpacity = useTransform(scrollYProgress, [0.05, 0.15], [1, 0]);
-
   // Splitting NEXGEN into NEXT and GENERATION
   const nexX = useTransform(scrollYProgress, [0, 0.2], [0, -200]);
   const genX = useTransform(scrollYProgress, [0, 0.2], [0, 120]);
@@ -33,16 +27,15 @@ export function HeroSequence() {
 
   // Visual centering & scale
   const titleX = useTransform(scrollYProgress, [0, 0.2], ["0%", "-12%"]);
+  const titleScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.65]);
   
-  // Shrink during split, then move up into final position
-  const titleScale = useTransform(scrollYProgress, [0, 0.2, 0.4], [1, 0.65, 0.45]);
-  const titleY = useTransform(scrollYProgress, [0.2, 0.4], ["0vh", "-45vh"]);
-  const titleOpacity = useTransform(scrollYProgress, [0.85, 0.95], [1, 0]);
+  // Fade out the ENTIRE title block (OJAS, NEXT GENERATION, SOLUTIONS) together
+  const titleOpacity = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]);
   
-  // Hero Content reveal: start AFTER a large gap (0.5)
+  // Hero Content reveal: start AFTER a large gap (0.45)
   // Fade out cleanly at the end (0.85 to 0.95)
-  const contentOpacity = useTransform(scrollYProgress, [0.5, 0.6, 0.85, 0.95], [0, 1, 1, 0]);
-  const contentY = useTransform(scrollYProgress, [0.5, 0.6, 0.85, 0.95], [100, 0, 0, -50]);
+  const contentOpacity = useTransform(scrollYProgress, [0.45, 0.55, 0.85, 0.95], [0, 1, 1, 0]);
+  const contentY = useTransform(scrollYProgress, [0.45, 0.55, 0.85, 0.95], [50, 0, 0, -50]);
 
   return (
     <div ref={containerRef} className="relative h-[400vh] w-full bg-white text-slate-900">
@@ -58,11 +51,10 @@ export function HeroSequence() {
         {/* Hero Title */}
         <motion.div 
           className="absolute flex flex-col items-center justify-center gap-6 whitespace-nowrap w-full"
-          style={{ y: titleY, opacity: titleOpacity }}
+          style={{ opacity: titleOpacity }}
         >
           {/* OJAS */}
           <motion.h2 
-            style={{ opacity: ojasOpacity }}
             className="text-2xl font-semibold tracking-[0.3em] text-slate-500"
           >
             OJAS
@@ -120,7 +112,6 @@ export function HeroSequence() {
 
           {/* SOLUTIONS */}
           <motion.h2 
-            style={{ opacity: solutionsOpacity }}
             className="text-2xl font-semibold tracking-[0.3em] text-slate-500"
           >
             SOLUTIONS
