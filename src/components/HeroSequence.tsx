@@ -25,9 +25,12 @@ export function HeroSequence() {
   const genX = useTransform(scrollYProgress, [0, 0.2, 1], [0, 80, 80]);
   const genY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 70, 70]);
   
-  // Fade in the 'T'
+  // Fade in the 'T' and 'ERATION'
   const tOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
   const tX = useTransform(scrollYProgress, [0, 0.2, 1], [-50, 0, 0]);
+  
+  const erationOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
+  const erationX = useTransform(scrollYProgress, [0, 0.2, 1], [-20, 0, 0]);
 
   // Scale down the whole block as it splits
   const titleScale = useTransform(scrollYProgress, [0, 0.2, 1], [1, 0.65, 0.65]);
@@ -84,8 +87,15 @@ export function HeroSequence() {
             </motion.div>
             
             {/* "GEN" block */}
-            <motion.div style={{ x: genX, y: genY }} className="flex z-0">
-              <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">GENERATION</span>
+            <motion.div style={{ x: genX, y: genY }} className="flex relative z-0">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">GEN</span>
+              {/* 'ERATION' fades in */}
+              <motion.span 
+                style={{ opacity: erationOpacity, x: erationX, position: 'absolute', left: '100%' }}
+                className="bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent"
+              >
+                ERATION
+              </motion.span>
             </motion.div>
           </motion.div>
 
