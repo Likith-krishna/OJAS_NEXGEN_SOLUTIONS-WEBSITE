@@ -22,9 +22,6 @@ export function HeroSequence() {
   const tOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
   const tX = useTransform(scrollYProgress, [0, 0.2], [-50, 0]);
 
-  // Particles opacity
-  const particlesOpacity = useTransform(scrollYProgress, [0.1, 0.2, 0.3], [0, 1, 0]);
-
   // Visual centering & scale
   const titleX = useTransform(scrollYProgress, [0, 0.2], ["0%", "-12%"]);
   const titleScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.65]);
@@ -55,7 +52,7 @@ export function HeroSequence() {
         >
           {/* OJAS */}
           <motion.h2 
-            className="text-2xl font-semibold tracking-[0.3em] text-slate-500"
+            className="text-xl md:text-3xl font-medium tracking-[0.5em] text-slate-400 uppercase"
           >
             OJAS
           </motion.h2>
@@ -79,12 +76,6 @@ export function HeroSequence() {
                 T
               </motion.span>
             </motion.div>
-            
-            {/* Particles / Energy Beam */}
-            <motion.div 
-              style={{ opacity: particlesOpacity }}
-              className="absolute left-1/2 top-1/2 h-full w-[2px] -translate-x-1/2 -translate-y-1/2 bg-blue-400 shadow-[0_0_30px_5px_rgba(96,165,250,0.6)]"
-            />
             
             {/* The Dot */}
             <motion.div
@@ -112,7 +103,7 @@ export function HeroSequence() {
 
           {/* SOLUTIONS */}
           <motion.h2 
-            className="text-2xl font-semibold tracking-[0.3em] text-slate-500"
+            className="text-xl md:text-3xl font-medium tracking-[0.5em] text-slate-400 uppercase"
           >
             SOLUTIONS
           </motion.h2>
