@@ -21,10 +21,10 @@ export function HeroSequence() {
   const solutionsOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
   const solutionsY = useTransform(scrollYProgress, [0, 0.2], [0, 50]);
 
-  // Splitting NEXGEN into NEXT and GEN
+  // Splitting NEXGEN into NEXT and GENERATION
   // We move NEX to the left, GEN to the right.
-  const nexX = useTransform(scrollYProgress, [0.1, 0.3], [0, -90]);
-  const genX = useTransform(scrollYProgress, [0.1, 0.3], [0, 90]);
+  const nexX = useTransform(scrollYProgress, [0.1, 0.3], [0, -150]);
+  const genX = useTransform(scrollYProgress, [0.1, 0.3], [0, 150]);
   
   // Fade in the 'T' exactly as the gap opens so it doesn't disappear early on scroll up
   const tOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
@@ -88,12 +88,27 @@ export function HeroSequence() {
               className="absolute left-1/2 top-1/2 h-full w-[2px] -translate-x-1/2 -translate-y-1/2 bg-blue-400 shadow-[0_0_30px_5px_rgba(96,165,250,0.6)]"
             />
             
+            {/* The Dot */}
+            <motion.div
+              style={{ opacity: tOpacity }}
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-500 font-bold"
+            >
+              •
+            </motion.div>
+            
             <motion.div 
               style={{ x: genX }}
+              className="flex items-center relative"
             >
               <span className="bg-gradient-to-l from-blue-800 to-blue-600 bg-clip-text text-transparent drop-shadow-sm">
                 GEN
               </span>
+              <motion.span 
+                style={{ opacity: tOpacity }}
+                className="absolute left-[100%] top-0 bg-gradient-to-l from-blue-600 to-blue-500 bg-clip-text text-transparent drop-shadow-sm"
+              >
+                ERATION
+              </motion.span>
             </motion.div>
           </div>
 
