@@ -28,11 +28,13 @@ export function HeroSequence() {
   
   // Fade out the ENTIRE title block (OJAS, NEXT GENERATION, SOLUTIONS) together
   const titleOpacity = useTransform(scrollYProgress, [0, 0.25, 0.35, 1], [1, 1, 0, 0]);
+  const titleDisplay = useTransform(scrollYProgress, [0, 0.35, 0.36, 1], ["flex", "flex", "none", "none"]);
   
   // Hero Content reveal: start AFTER a large gap (0.45)
   // Fade out cleanly at the end (0.85 to 0.95)
   const contentOpacity = useTransform(scrollYProgress, [0, 0.45, 0.55, 0.85, 0.95, 1], [0, 0, 1, 1, 0, 0]);
   const contentY = useTransform(scrollYProgress, [0, 0.45, 0.55, 0.85, 0.95, 1], [50, 50, 0, 0, -50, -50]);
+  const contentDisplay = useTransform(scrollYProgress, [0, 0.44, 0.45, 0.95, 0.96, 1], ["none", "none", "flex", "flex", "none", "none"]);
 
   return (
     <div ref={containerRef} className="relative h-[400vh] w-full bg-white text-slate-900">
@@ -47,8 +49,8 @@ export function HeroSequence() {
 
         {/* Hero Title */}
         <motion.div 
-          className="absolute flex flex-col items-center justify-center gap-6 whitespace-nowrap w-full"
-          style={{ opacity: titleOpacity }}
+          className="absolute flex-col items-center justify-center gap-6 whitespace-nowrap w-full"
+          style={{ opacity: titleOpacity, display: titleDisplay }}
         >
           {/* OJAS */}
           <motion.h2 
@@ -111,8 +113,8 @@ export function HeroSequence() {
 
         {/* Hero Content Revealed */}
         <motion.div 
-          style={{ opacity: contentOpacity, y: contentY }}
-          className="absolute top-1/2 flex w-full max-w-4xl -translate-y-1/2 flex-col items-center gap-8 px-6 pt-32 text-center"
+          style={{ opacity: contentOpacity, y: contentY, display: contentDisplay }}
+          className="absolute top-1/2 w-full max-w-4xl -translate-y-1/2 flex-col items-center gap-8 px-6 pt-32 text-center"
         >
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 drop-shadow-sm">
             Build Future-Ready Software Solutions for Modern Businesses
