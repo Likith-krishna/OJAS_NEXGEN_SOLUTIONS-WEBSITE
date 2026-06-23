@@ -20,7 +20,7 @@ export function HeroSequence() {
   const ojasY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
   
   const solutionsOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
-  const solutionsY = useTransform(scrollYProgress, [0, 0.2], [0, 50]);
+  const solutionsY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
 
   // Splitting NEXGEN into NEXT and GENERATION
   // We move NEX further to the left to account for the width of the new 'T'
