@@ -14,42 +14,40 @@ export function HeroSequence() {
     offset: ["start start", "end end"]
   });
 
-  // 1. Initial State -> Morph (0 to 0.3)
-  // Fade out completely very early (by 0.2) BEFORE content comes up at 0.5 to guarantee no overlap!
-  const ojasOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
-  const ojasY = useTransform(scrollYProgress, [0, 0.2], [0, -150]);
+  // 1. Initial State -> Morph (0 to 0.2)
+  // Fade out completely very early BEFORE content comes up to guarantee no overlap!
+  const ojasOpacity = useTransform(scrollYProgress, [0.05, 0.15], [1, 0]);
+  const ojasY = useTransform(scrollYProgress, [0, 0.2], [0, -100]); // Moves UP
   
-  const solutionsOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
-  const solutionsY = useTransform(scrollYProgress, [0, 0.2], [0, -150]);
+  const solutionsOpacity = useTransform(scrollYProgress, [0.05, 0.15], [1, 0]);
+  const solutionsY = useTransform(scrollYProgress, [0, 0.2], [0, 100]); // Moves DOWN (stays under)
 
   // Splitting NEXGEN into NEXT and GENERATION
-  // We move NEX further to the left to account for the width of the new 'T'
-  // so the dot remains perfectly centered in the gap.
-  const nexX = useTransform(scrollYProgress, [0.1, 0.3], [0, -200]);
-  const genX = useTransform(scrollYProgress, [0.1, 0.3], [0, 120]);
+  const nexX = useTransform(scrollYProgress, [0, 0.2], [0, -200]);
+  const genX = useTransform(scrollYProgress, [0, 0.2], [0, 120]);
   
-  // Fade in the 'T' exactly as the gap opens so it doesn't disappear early on scroll up
-  const tOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
-  const tX = useTransform(scrollYProgress, [0.1, 0.3], [-20, 0]);
+  // Fade in the 'T' exactly as the gap opens
+  const tOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const tX = useTransform(scrollYProgress, [0, 0.2], [-50, 0]);
 
   // Particles opacity
   const particlesOpacity = useTransform(scrollYProgress, [0.1, 0.2, 0.3], [0, 1, 0]);
 
-  // Visual centering & scale: "GENERATION" makes it right-heavy and very wide
-  const titleX = useTransform(scrollYProgress, [0.1, 0.3], ["0%", "-12%"]);
+  // Visual centering & scale
+  const titleX = useTransform(scrollYProgress, [0, 0.2], ["0%", "-12%"]);
   
-  // Shrink during split to prevent overflow, then shrink more and move up
-  const titleScale = useTransform(scrollYProgress, [0.1, 0.3, 0.5], [1, 0.65, 0.45]);
-  const titleY = useTransform(scrollYProgress, [0.3, 0.5], ["0vh", "-45vh"]);
-  const titleOpacity = useTransform(scrollYProgress, [0.8, 0.9], [1, 0]);
+  // Shrink during split, then move up into final position
+  const titleScale = useTransform(scrollYProgress, [0, 0.2, 0.4], [1, 0.65, 0.45]);
+  const titleY = useTransform(scrollYProgress, [0.2, 0.4], ["0vh", "-45vh"]);
+  const titleOpacity = useTransform(scrollYProgress, [0.85, 0.95], [1, 0]);
   
-  // Hero Content reveal: only start after SOLUTIONS is completely gone (0.5)
-  // Fade out before reaching the bottom (0.8 to 0.9) so the page disappears cleanly
-  const contentOpacity = useTransform(scrollYProgress, [0.5, 0.6, 0.8, 0.9], [0, 1, 1, 0]);
-  const contentY = useTransform(scrollYProgress, [0.5, 0.6, 0.8, 0.9], [100, 0, 0, -50]);
+  // Hero Content reveal: start AFTER a large gap (0.5)
+  // Fade out cleanly at the end (0.85 to 0.95)
+  const contentOpacity = useTransform(scrollYProgress, [0.5, 0.6, 0.85, 0.95], [0, 1, 1, 0]);
+  const contentY = useTransform(scrollYProgress, [0.5, 0.6, 0.85, 0.95], [100, 0, 0, -50]);
 
   return (
-    <div ref={containerRef} className="relative h-[300vh] w-full bg-white text-slate-900">
+    <div ref={containerRef} className="relative h-[400vh] w-full bg-white text-slate-900">
       {/* Sticky Container */}
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center">
         
