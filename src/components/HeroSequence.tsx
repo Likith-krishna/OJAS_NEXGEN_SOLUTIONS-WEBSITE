@@ -14,16 +14,22 @@ export function HeroSequence() {
     offset: ["start start", "end end"]
   });
 
-  // Splitting NEXGEN into NEXT and GENERATION
-  const nexX = useTransform(scrollYProgress, [0, 0.2, 1], [0, -200, -200]);
-  const genX = useTransform(scrollYProgress, [0, 0.2, 1], [0, 120, 120]);
+  // Move OJAS and SOLUTIONS outwards vertically so they don't collide with the diagonal split
+  const ojasY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -100, -100]);
+  const solutionsY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 100, 100]);
+
+  // Splitting NEXGEN into NEXT and GENERATION (Diagonal Split)
+  const nexX = useTransform(scrollYProgress, [0, 0.2, 1], [0, -100, -100]);
+  const nexY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -70, -70]);
   
-  // Fade in the 'T' exactly as the gap opens
+  const genX = useTransform(scrollYProgress, [0, 0.2, 1], [0, 80, 80]);
+  const genY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 70, 70]);
+  
+  // Fade in the 'T'
   const tOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
   const tX = useTransform(scrollYProgress, [0, 0.2, 1], [-50, 0, 0]);
 
-  // Visual centering & scale
-  const titleX = useTransform(scrollYProgress, [0, 0.2, 1], ["0%", "-12%", "-12%"]);
+  // Scale down the whole block as it splits
   const titleScale = useTransform(scrollYProgress, [0, 0.2, 1], [1, 0.65, 0.65]);
   
   // Fade out the ENTIRE title block (OJAS, NEXT GENERATION, SOLUTIONS) together
@@ -54,57 +60,38 @@ export function HeroSequence() {
         >
           {/* OJAS */}
           <motion.h2 
+            style={{ y: ojasY }}
             className="text-2xl md:text-3xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
           >
             OJAS
           </motion.h2>
 
-          {/* NEX(T)GEN Split */}
+          {/* NEXGEN Split Container */}
           <motion.div 
-            style={{ scale: titleScale, x: titleX }}
-            className="relative flex items-center justify-center text-7xl font-extrabold tracking-tighter md:text-9xl"
+            style={{ scale: titleScale }}
+            className="flex flex-row items-center justify-center font-extrabold tracking-tighter text-6xl md:text-9xl text-slate-900 w-full"
           >
-            <motion.div 
-              style={{ x: nexX }}
-              className="flex items-center relative"
-            >
-              <span className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent drop-shadow-sm">
-                NEX
-              </span>
+            {/* "NEX" block */}
+            <motion.div style={{ x: nexX, y: nexY }} className="flex relative z-10">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">NEX</span>
+              {/* The 'T' fades in */}
               <motion.span 
-                style={{ opacity: tOpacity, x: tX }}
-                className="absolute left-[100%] top-0 bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent drop-shadow-sm"
+                style={{ opacity: tOpacity, x: tX, position: 'absolute', right: '-0.7em' }}
+                className="bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent"
               >
                 T
               </motion.span>
             </motion.div>
             
-            {/* The Dot */}
-            <motion.div
-              style={{ opacity: tOpacity }}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-800 font-bold"
-            >
-              •
-            </motion.div>
-            
-            <motion.div 
-              style={{ x: genX }}
-              className="flex items-center relative"
-            >
-              <span className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent drop-shadow-sm">
-                GEN
-              </span>
-              <motion.span 
-                style={{ opacity: tOpacity }}
-                className="absolute left-[100%] top-0 bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent drop-shadow-sm"
-              >
-                ERATION
-              </motion.span>
+            {/* "GEN" block */}
+            <motion.div style={{ x: genX, y: genY }} className="flex z-0">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">GENERATION</span>
             </motion.div>
           </motion.div>
 
           {/* SOLUTIONS */}
           <motion.h2 
+            style={{ y: solutionsY }}
             className="text-2xl md:text-3xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
           >
             SOLUTIONS
