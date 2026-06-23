@@ -58,7 +58,7 @@ export function HeroSequence() {
         {/* Hero Title */}
         <motion.div 
           className="absolute flex flex-col items-center justify-center gap-6 whitespace-nowrap w-full"
-          style={{ x: titleX, y: titleY, scale: titleScale }}
+          style={{ x: titleX, y: titleY }}
         >
           {/* OJAS */}
           <motion.h2 
@@ -69,7 +69,10 @@ export function HeroSequence() {
           </motion.h2>
 
           {/* NEX(T)GEN Split */}
-          <div className="relative flex items-center justify-center text-7xl font-extrabold tracking-tighter md:text-9xl">
+          <motion.div 
+            style={{ scale: titleScale }}
+            className="relative flex items-center justify-center text-7xl font-extrabold tracking-tighter md:text-9xl"
+          >
             <motion.div 
               style={{ x: nexX }}
               className="flex items-center relative"
@@ -113,7 +116,7 @@ export function HeroSequence() {
                 ERATION
               </motion.span>
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* SOLUTIONS */}
           <motion.h2 
