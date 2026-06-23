@@ -16,7 +16,7 @@ const REASONS = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="relative w-full bg-blue-900 py-32 px-6 overflow-hidden">
+    <section className="relative w-full bg-slate-950 py-32 px-6 overflow-hidden">
       {/* Dynamic Background Pattern */}
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(#ffffff 2px, transparent 2px)", backgroundSize: "40px 40px" }} />
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-600/20 to-transparent blur-3xl" />
@@ -29,7 +29,7 @@ export function WhyChooseUsSection() {
             <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6">
               Empowering Your Business With Next-Gen Technology
             </h3>
-            <p className="text-lg text-blue-100 mb-8 leading-relaxed">
+            <p className="text-lg text-slate-300 mb-8 leading-relaxed">
               We don't just write code; we build strategic partnerships. Our approach combines enterprise-grade engineering with innovative thinking to ensure your digital transformation is seamless, secure, and scalable.
             </p>
             
@@ -41,16 +41,16 @@ export function WhyChooseUsSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="flex items-center space-x-3 bg-blue-800/40 p-4 rounded-xl border border-blue-700/50 backdrop-blur-sm"
+                  className="flex items-center space-x-3 bg-slate-900/50 p-4 rounded-xl border border-slate-800/80 backdrop-blur-sm"
                 >
-                  <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0" />
-                  <span className="text-blue-50 font-medium">{reason}</span>
+                  <CheckCircle2 className="h-5 w-5 text-blue-500 shrink-0" />
+                  <span className="text-slate-200 font-medium">{reason}</span>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          <div className="relative lg:h-[600px] w-full rounded-3xl overflow-hidden border border-blue-700/50 bg-blue-800/20 backdrop-blur-md shadow-2xl flex items-center justify-center">
+          <div className="relative lg:h-[600px] w-full rounded-3xl overflow-hidden border border-slate-800 bg-slate-900/50 backdrop-blur-md shadow-2xl flex items-center justify-center">
              {/* Glowing orb representing tech / AI */}
              <motion.div 
                animate={{ 
@@ -65,7 +65,7 @@ export function WhyChooseUsSection() {
                  <ShieldCheck className="h-16 w-16 text-blue-300" />
                </div>
                <h4 className="text-2xl font-bold text-white mb-2">Enterprise-Grade Reliability</h4>
-               <p className="text-blue-200">Built to withstand the demands of global operations.</p>
+               <p className="text-slate-300">Built to withstand the demands of global operations.</p>
              </div>
           </div>
 

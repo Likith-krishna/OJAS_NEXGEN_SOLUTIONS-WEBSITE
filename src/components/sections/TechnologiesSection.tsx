@@ -27,7 +27,7 @@ const TECH_STACK = [
 
 export function TechnologiesSection() {
   return (
-    <section className="w-full bg-slate-900 py-32 px-6 text-white relative overflow-hidden">
+    <section className="w-full bg-slate-950 py-32 px-6 text-white relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-96 bg-blue-600/20 blur-[120px] rounded-full pointer-events-none" />
       

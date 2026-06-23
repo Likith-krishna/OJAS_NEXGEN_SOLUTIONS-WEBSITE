@@ -23,7 +23,7 @@ const TESTIMONIALS = [
 
 export function TestimonialsSection() {
   return (
-    <section className="w-full bg-blue-600 py-32 px-6 text-white overflow-hidden relative">
+    <section className="w-full bg-slate-950 py-32 px-6 text-white overflow-hidden relative">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent" />
       
       <div className="mx-auto max-w-7xl relative z-10">
@@ -42,7 +42,7 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-blue-700/50 backdrop-blur-md p-8 rounded-3xl border border-blue-500 hover:bg-blue-700 transition-colors flex flex-col justify-between"
+              className="bg-slate-900/50 backdrop-blur-md p-8 rounded-3xl border border-slate-800 hover:border-slate-700 hover:bg-slate-900 transition-colors flex flex-col justify-between"
             >
               <div>
                 <Quote className="h-10 w-10 text-blue-300 mb-6 opacity-50" />

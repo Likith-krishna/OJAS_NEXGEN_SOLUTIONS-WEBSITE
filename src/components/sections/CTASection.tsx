@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function CTASection() {
   return (
-    <section className="w-full bg-slate-900 py-32 px-6 relative overflow-hidden text-center">
+    <section className="w-full bg-slate-950 py-32 px-6 relative overflow-hidden text-center">
       <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-blue-400 via-transparent to-transparent" />
       
       <div className="mx-auto max-w-4xl relative z-10">

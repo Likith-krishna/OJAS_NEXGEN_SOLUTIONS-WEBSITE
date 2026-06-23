@@ -18,17 +18,17 @@ export function HeroSequence() {
   });
 
   // Move OJAS and SOLUTIONS outwards vertically so they don't collide with the diagonal split
-  const ojasY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -80, -80]);
-  const solutionsY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 80, 80]);
+  const ojasY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -45, -45]);
+  const solutionsY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 45, 45]);
 
   // Splitting NEXGEN into NEXT and GENERATION (Diagonal Split)
-  // Tighter horizontal and vertical spacing for a cleaner look
+  // Add horizontal spacing back, keep vertical line spacing slightly reduced
   const nexX = useTransform(scrollYProgress, [0, 0.2, 1], [0, -80, -80]);
-  const nexY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -45, -45]);
+  const nexY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -35, -35]);
   
   // GENERATION moves right
   const genX = useTransform(scrollYProgress, [0, 0.2, 1], [0, 50, 50]);
-  const genY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 45, 45]);
+  const genY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 35, 35]);
   
   // Fade in the 'T' and 'ERATION'
   const tOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
