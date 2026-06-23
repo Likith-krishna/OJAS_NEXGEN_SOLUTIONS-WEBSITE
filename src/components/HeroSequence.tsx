@@ -19,10 +19,12 @@ export function HeroSequence() {
   const solutionsY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 100, 100]);
 
   // Splitting NEXGEN into NEXT and GENERATION (Diagonal Split)
-  const nexX = useTransform(scrollYProgress, [0, 0.2, 1], [0, -100, -100]);
+  // NEXT goes further to the left to give more space
+  const nexX = useTransform(scrollYProgress, [0, 0.2, 1], [0, -180, -180]);
   const nexY = useTransform(scrollYProgress, [0, 0.2, 1], [0, -70, -70]);
   
-  const genX = useTransform(scrollYProgress, [0, 0.2, 1], [0, 80, 80]);
+  // GENERATION moves right
+  const genX = useTransform(scrollYProgress, [0, 0.2, 1], [0, 100, 100]);
   const genY = useTransform(scrollYProgress, [0, 0.2, 1], [0, 70, 70]);
   
   // Fade in the 'T' and 'ERATION'
@@ -64,7 +66,7 @@ export function HeroSequence() {
           {/* OJAS */}
           <motion.h2 
             style={{ y: ojasY }}
-            className="text-2xl md:text-3xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
+            className="text-3xl md:text-5xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
           >
             OJAS
           </motion.h2>
@@ -102,7 +104,7 @@ export function HeroSequence() {
           {/* SOLUTION */}
           <motion.h2 
             style={{ y: solutionsY }}
-            className="text-2xl md:text-3xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
+            className="text-3xl md:text-5xl font-bold tracking-[0.6em] bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent uppercase"
           >
             SOLUTION
           </motion.h2>
