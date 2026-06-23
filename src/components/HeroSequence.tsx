@@ -42,8 +42,9 @@ export function HeroSequence() {
   const titleY = useTransform(scrollYProgress, [0.3, 0.5], ["0vh", "-45vh"]);
   
   // Hero Content reveal: only start after SOLUTIONS is completely gone (0.5)
-  const contentOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
-  const contentY = useTransform(scrollYProgress, [0.5, 0.6], [100, 0]);
+  // Fade out before reaching the bottom (0.8 to 0.9) so the page disappears cleanly
+  const contentOpacity = useTransform(scrollYProgress, [0.5, 0.6, 0.8, 0.9], [0, 1, 1, 0]);
+  const contentY = useTransform(scrollYProgress, [0.5, 0.6, 0.8, 0.9], [100, 0, 0, -50]);
 
   return (
     <div ref={containerRef} className="relative h-[300vh] w-full bg-white text-slate-900">
