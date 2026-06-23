@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Instagram, ArrowRight } from "lucide-react";
+import { Globe, MessageSquare, Mail, Phone, ArrowRight } from "lucide-react";
 
 export function Footer() {
   return (
@@ -15,16 +15,16 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                <Linkedin className="h-4 w-4" />
+                <Globe className="h-4 w-4" />
               </a>
               <a href="#" className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                <Twitter className="h-4 w-4" />
+                <MessageSquare className="h-4 w-4" />
               </a>
               <a href="#" className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                <Facebook className="h-4 w-4" />
+                <Mail className="h-4 w-4" />
               </a>
               <a href="#" className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                <Instagram className="h-4 w-4" />
+                <Phone className="h-4 w-4" />
               </a>
             </div>
           </div>
