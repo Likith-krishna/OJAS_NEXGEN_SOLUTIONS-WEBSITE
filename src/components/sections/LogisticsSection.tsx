@@ -44,10 +44,13 @@ export function LogisticsSection() {
           >
             <h2 className="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Our Sister Company</h2>
             
-            {/* Logo Placeholder */}
-            <div className="w-64 h-24 bg-slate-200 mx-auto rounded-xl border-2 border-dashed border-slate-300 flex items-center justify-center mb-8 relative group overflow-hidden">
-              <span className="text-slate-400 font-bold tracking-widest uppercase z-10 text-center px-4">OJAS Logistics<br/>Logo Placeholder</span>
-              <div className="absolute inset-0 bg-slate-300/50 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            {/* Logo */}
+            <div className="mx-auto mb-10 w-full max-w-sm">
+              <img 
+                src="https://ojaslogistics.com/wp-content/uploads/2017/08/sticky-logo.png" 
+                alt="OJAS International Logistics Solutions" 
+                className="w-full h-auto object-contain"
+              />
             </div>
 
             <h3 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">
