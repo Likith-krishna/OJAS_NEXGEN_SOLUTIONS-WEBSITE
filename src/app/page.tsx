@@ -10,6 +10,7 @@ import { ProcessSection } from "@/components/sections/ProcessSection";
 import { TechnologiesSection } from "@/components/sections/TechnologiesSection";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { PhilosophySection } from "@/components/sections/PhilosophySection";
+import { LogisticsSection } from "@/components/sections/LogisticsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -58,6 +59,7 @@ export default function Home() {
       <TechnologiesSection />
       <PortfolioSection />
       <PhilosophySection />
+      <LogisticsSection />
       <FAQSection />
       <CTASection />
       <ContactSection />
